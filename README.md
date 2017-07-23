@@ -6,4 +6,5 @@ This repository contains the web-apps i have developed as a part of an Angular c
 Each "section" finishes with a developed project where the acquired knowledge is shown off.
 
 Index:<br>
-1.helloWorld: Final project is a simple app where we can find examples of components (created via CLI and manually), ngIf and ngFor.<br>
+1.helloWorld: Simple app made as a "hello world" where we can find examples of components (created via CLI and manually), ngIf and ngFor.<br>
+2.simpsons-app: First SPA made. This app contains a navbar which you can use to navigate to "characters" section or to search any simpsons character you want (among those which I've included). With this app I've learnt how to use components (more deeply than in "helloWorld"),  services and routing. 
