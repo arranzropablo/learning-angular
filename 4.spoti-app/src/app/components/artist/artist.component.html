@@ -1,0 +1,50 @@
+<div *ngIf="artist" class="container">
+
+  <div class="row">
+    <div class="col-md-3 text-center">
+      <img [src]="artist.images | noimage" alt="" class="img-thumbnail img-circle">
+    </div>
+    <div class="col-md-9">
+      <h3>{{ artist.name }}</h3>
+      <hr>
+      <a [href]="artist.external_urls?.spotify" class="btn btn-outline-success puntero">Open in Spotify</a>
+      <a [routerLink]="['/search']" class="btn btn-outline-danger puntero">Return</a>
+    </div>
+  </div>
+
+</div>
+
+
+<div *ngIf="topTracks" class="container">
+  <h3>{{ artist.name }} top tracks</h3>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="table-responsive">
+        <table class="table table-inverse table-hover">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Image</th>
+              <th>Song</th>
+              <th>Album</th>
+              <th>Preview</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let track of topTracks; let i = index">
+              <td>{{ i+1 }}</td>
+              <td>
+                <img [src]="track.album?.images | noimage" class="img-fluid img-50">
+              </td>
+              <td>{{ track.name }}</td>
+              <td>{{ track.album.name }}</td>
+              <td>
+                <iframe [src]="track.uri | safeURL:'https://open.spotify.com/embed?uri='" width="300" height="80" frameborder="0" allowtransparency="true"></iframe>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
