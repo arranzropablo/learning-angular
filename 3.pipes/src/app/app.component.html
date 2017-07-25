@@ -1,0 +1,137 @@
+<div class="container">
+  <br>
+  <h1>Pipes</h1>
+  <hr>
+  <table class="table">
+  <thead class="thead-inverse">
+    <tr>
+      <th>Variable</th>
+      <th>Pipe</th>
+      <th>Resultado</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>{{ name }}</td>
+      <td>uppercase</td>
+      <td>{{ name | uppercase }}</td>
+    </tr>
+
+    <tr>
+      <td>{{ name }}</td>
+      <td>uppercase</td>
+      <td>{{ name | lowercase }}</td>
+    </tr>
+
+    <tr>
+      <td>{{ name }}</td>
+      <td>slice:2</td>
+      <td>{{ name | slice:2 }}</td>
+    </tr>
+
+    <tr>
+      <td>{{ name }}</td>
+      <td>slice:0:2</td>
+      <td>{{ name | slice:0:2 }}</td>
+    </tr>
+
+    <tr>
+      <td>{{ array }}</td>
+      <td>slice:1:5</td>
+      <td>{{ array | slice:1:5 }}</td>
+    </tr>
+
+    <tr>
+      <td>{{ pi }}</td>
+      <td>number:'3.0-0'</td>
+      <td>{{ pi | number:'3.0-0' }}</td>
+    </tr>
+
+    <tr>
+      <td>{{ pi }}</td>
+      <td>number:'1.0-2'</td>
+      <td>{{ pi | number:'1.0-2' }}</td>
+    </tr>
+
+    <tr>
+      <td>{{ percentage }}</td>
+      <td>percent</td>
+      <td>{{ percentage | percent }}</td>
+    </tr>
+
+    <tr>
+      <td>{{ percentage }}</td>
+      <td>percent:'2.2-2'</td>
+      <td>{{ percentage | percent:'2.2-2' }}</td>
+    </tr>
+
+    <tr>
+      <td>{{ money }}</td>
+      <td>currency</td>
+      <td>{{ money | currency }}</td>
+    </tr>
+
+    <tr>
+      <td>{{ money }}</td>
+      <td>currency:'EUR':true:'.0-0'</td>
+      <td>{{ money | currency:'EUR':true:'.0-0' }}</td>
+    </tr>
+
+    <tr>
+      <td>{{ promiseValue }}</td>
+      <td>async</td>
+      <td>{{ promiseValue | async }}</td>
+    </tr>
+
+    <tr>
+      <td>{{ fecha }}</td>
+      <td>date</td>
+      <td>{{ fecha | date }}</td>
+    </tr>
+
+    <tr>
+      <td>{{ fecha }}</td>
+      <td>date:'medium'</td>
+      <td>{{ fecha | date:'medium' }}</td>
+    </tr>
+
+    <tr>
+      <td>{{ fecha }}</td>
+      <td>date:'dd MMMM y'</td>
+      <td>{{ fecha | date:'dd MMMM y' }}</td>
+    </tr>
+
+    <tr>
+      <td>{{ name2 }}</td>
+      <td>capitalize</td>
+      <td>{{ name2 | capitalize }}</td>
+    </tr>
+
+    <tr>
+      <td>{{ name2 }}</td>
+      <td>capitalize:false</td>
+      <td>{{ name2 | capitalize:false }}</td>
+    </tr>
+
+    <tr>
+      <td>{{ name }}</td>
+      <td>
+        password:{{ active }}
+        <br>
+        <button (click)="active = !active" type="button" class="btn btn-outline-primary">Enable/Disable</button>
+      </td>
+      <td>{{ name | password:active }}</td>
+    </tr>
+
+    <h4>json & pre</h4>
+    <pre>{{ heroe | json }}</pre>
+
+    <h4>YouTube Domseguro</h4>
+    <iframe width="560" height="315" [src]="video | domseguro:'https://www.youtube.com/embed/'" frameborder="0" allowfullscreen></iframe>
+
+
+  </tbody>
+</table>
+
+
+</div>
