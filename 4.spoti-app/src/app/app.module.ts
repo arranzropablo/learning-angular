@@ -1,9 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
-
-import { APP_ROUTING } from './app.routes';
+import { HttpClientModule } from "@angular/common/http";
+import { FormsModule } from "@angular/forms";
+import { RouterModule } from "@angular/router";
 
 import { SpotifyService } from './services/spotify.service';
 
@@ -15,6 +14,8 @@ import { HomeComponent } from './components/home/home.component';
 import { SearchComponent } from './components/search/search.component';
 import { NavbarComponent } from './components/shared/navbar/navbar.component';
 import { ArtistComponent } from './components/artist/artist.component';
+
+import { APP_ROUTES } from './app.routes';
 
 @NgModule({
   declarations: [
@@ -28,9 +29,9 @@ import { ArtistComponent } from './components/artist/artist.component';
   ],
   imports: [
     BrowserModule,
-    HttpModule,
+    HttpClientModule,
     FormsModule,
-    APP_ROUTING
+    RouterModule.forRoot(APP_ROUTES, {useHash: true})
   ],
   providers: [
     SpotifyService
