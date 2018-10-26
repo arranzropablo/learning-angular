@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class CharactersService {
-  private chars:Character[] = [
+  private characters:Character[] = [
     {
       name: "Homer Simpson",
       bio: "El poder más reconocido de Aquaman es la capacidad telepÃ¡tica para comunicarse con la vida marina, la cual puede convocar a grandes distancias.",
@@ -58,23 +58,27 @@ export class CharactersService {
     console.log("Servicio listo para usarse");
   }
 
-  public getChars():Character[]{
-    return this.chars;
+  public getCharacters():Character[]{
+    return this.characters;
   }
 
-  public getChar( index:string ){
-    return this.chars[index];
+  public getCharacter( index:string ){
+    return this.characters[index];
   }
 
   public searchChar(search:string):Character[]{
+
     let charactersArray:Character[] = [];
     search = search.toLowerCase();
-    for(let character of this.chars){
+
+    this.characters.forEach( (character, index) => {
       let name = character.name.toLowerCase();
+
       if ( name.indexOf( search ) >= 0){
+        character.idx = index;
         charactersArray.push(character);
       }
-    }
+    })
     return charactersArray;
   }
 
@@ -86,4 +90,5 @@ export interface Character{
   img:string;
   appearing:string;
   company:string;
+  idx?:number;
 }

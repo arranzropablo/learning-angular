@@ -16,7 +16,7 @@ export class CharacterComponent {
                private router:Router) {
 
     this.activatedRoute.params.subscribe( params => {
-      this.character = this.charactersService.getChar(params['id']);
+      this.character = this.charactersService.getCharacter(params['id']);
     })
   }
 

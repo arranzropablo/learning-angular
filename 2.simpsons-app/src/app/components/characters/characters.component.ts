@@ -8,16 +8,16 @@ import { CharactersService, Character } from '../../services/characters.service'
 })
 export class CharactersComponent implements OnInit {
 
-  chars:Character[] = [];
+  characters:Character[] = [];
 
   constructor(private charService:CharactersService,
               private router:Router) { }
 
   ngOnInit() {
-    this.chars = this.charService.getChars();
+    this.characters = this.charService.getCharacters();
   }
 
-  getChar(index:number){
+  getCharacter(index:number){
     this.router.navigate(['/character', index]);
   }
 
