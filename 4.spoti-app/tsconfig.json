@@ -14,9 +14,11 @@
     "lib": [
       "es2016",
       "dom"
-    ]
+    ],
+    "module": "es2015",
+    "baseUrl": "./"
   },
-  "exclude":[
+  "exclude": [
     "../node_modules"
   ]
 }

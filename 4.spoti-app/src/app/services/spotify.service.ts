@@ -1,29 +1,35 @@
-import { Injectable } from '@angular/core';
-import { Http, Headers } from '@angular/http';
-import 'rxjs/add/operator/map';
+import { Injectable } from '@angular/core'; 
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
-@Injectable()
+import { map } from 'rxjs/operators';
+
+@Injectable({
+  providedIn: 'root'
+})
 export class SpotifyService {
 
-  artists:any[] = [];
   urlSearch:string = "https://api.spotify.com/v1/search"
   urlArtist:string = "https://api.spotify.com/v1/artists/"
-  authToken:string = 'Bearer BQCoSRUiG21Yju5KEmr4Ic3QIXociApMCqRM-H1DkCQGdHzhMPiwDiqdQ9cDDFCmQQ7xk0EQw_Bgd15aUl_Tsg';
+  authToken:string = 'Bearer BQCOgGcLPZP-jHyKFSKahDLnQKe1UTn0QZ1DdJDYCKpaH13zAtrCwKAqlyvo70_e2mv0KVNNdN9DMeQPBTI';
+  headers:HttpHeaders = new HttpHeaders({
+    'Authorization': this.authToken
+  });
 
-  constructor( private http:Http ) { }
+  constructor( private http:HttpClient ) {
+  }
+
+  public getNewReleases(){
+    return this.http.get('https://api.spotify.com/v1/browse/new-releases', { headers: this.headers })
+                    .pipe(map((data:any) => data.albums.items));
+  }
 
   public getArtists(term:string){
 
-    let headers = new Headers();
-    headers.append('authorization', this.authToken)
-
-    let query = `?q=${ term }&type=artist`;
+    let query = `?q=${ term }&type=artist&limit=15`;
     let url=this.urlSearch + query;
 
-    return this.http.get( url, { headers } ).map( res => {
-      this.artists=res.json().artists.items;
-    });
-
+    return this.http.get( url, { headers: this.headers })
+                    .pipe(map((data:any) => data.artists.items));
   }
 
   public getArtist(id:string){
@@ -34,9 +40,7 @@ export class SpotifyService {
     let query = `${ id }`;
     let url=this.urlArtist + query;
 
-    return this.http.get( url, { headers } ).map( res => {
-      return res.json();
-    });
+    return this.http.get( url, { headers: this.headers } );
 
   }
 
@@ -48,9 +52,7 @@ export class SpotifyService {
     let query = `${ id }/top-tracks?country=US`;
     let url=this.urlArtist + query;
 
-    return this.http.get( url, { headers } ).map( res => {
-      return res.json().tracks;
-    });
+    return this.http.get( url, { headers: this.headers } );
 
   }
 

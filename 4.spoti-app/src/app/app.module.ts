@@ -4,8 +4,6 @@ import { HttpClientModule } from "@angular/common/http";
 import { FormsModule } from "@angular/forms";
 import { RouterModule } from "@angular/router";
 
-import { SpotifyService } from './services/spotify.service';
-
 import { NoimagePipe } from './pipes/noimage.pipe';
 import { SafeURLPipe } from './pipes/safeURL.pipe';
 
@@ -33,9 +31,7 @@ import { APP_ROUTES } from './app.routes';
     FormsModule,
     RouterModule.forRoot(APP_ROUTES, {useHash: true})
   ],
-  providers: [
-    SpotifyService
-  ],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

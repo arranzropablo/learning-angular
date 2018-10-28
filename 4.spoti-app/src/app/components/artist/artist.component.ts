@@ -14,16 +14,16 @@ export class ArtistComponent implements OnInit {
   constructor(private activatedRoute:ActivatedRoute, private spotifyService:SpotifyService) { }
 
   ngOnInit() {
-    this.activatedRoute.params
-      .map( param => param['id'])
-      .subscribe( id => {
-        this.spotifyService.getArtist(id).subscribe(param =>{
-          this.artist = param;
-        });
-        this.spotifyService.getTopTracks(id).subscribe(param =>{
-          this.topTracks = param;
-        });
-      });
+    // this.activatedRoute.params
+    //   .map( param => param['id'])
+    //   .subscribe( id => {
+    //     this.spotifyService.getArtist(id).subscribe(param =>{
+    //       this.artist = param;
+    //     });
+    //     this.spotifyService.getTopTracks(id).subscribe(param =>{
+    //       // this.topTracks = param;
+    //     });
+    //   });
   }
 
 }
