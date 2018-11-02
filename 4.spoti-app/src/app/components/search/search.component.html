@@ -1,7 +1,7 @@
 <div class="container top-40">
   <div class="row">
     <div class="col-md-3">
-      <label for="term">Artist search</label>
+      <label for="term" style="color: white">Artist search</label>
       <input  [(ngModel)]="term"
               (keyup)="searchArtist()"
               type="text"
@@ -10,15 +10,10 @@
               placeholder="Search artist...">
       <hr>
     </div>
-
-    <div class="col-md-9">
-      <div class="row">
-        <div class="col-md-3 text-center" *ngFor="let artist of artists" [routerLink]="['/artist', artist.id]">
-          <img [src]="artist.images | noimage" alt="" class="img-fluid img-thumbnail puntero">
-          <p>{{ artist.name }}</p>
-        </div>
-      </div>
-    </div>
-
   </div>
+
+    <app-loading-spinner *ngIf="loading" class="m-5"></app-loading-spinner>
+
+    <app-artist-card *ngIf="!loading" [items]="artists"></app-artist-card>
+
 </div>

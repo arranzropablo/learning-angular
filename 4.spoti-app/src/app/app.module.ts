@@ -11,9 +11,10 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { SearchComponent } from './components/search/search.component';
 import { NavbarComponent } from './components/shared/navbar/navbar.component';
-import { ArtistComponent } from './components/artist/artist.component';
+import { ArtistCardComponent } from './components/artist-card/artist-card.component';
 
 import { APP_ROUTES } from './app.routes';
+import { LoadingSpinnerComponent } from './components/shared/loading-spinner/loading-spinner.component';
 
 @NgModule({
   declarations: [
@@ -22,8 +23,9 @@ import { APP_ROUTES } from './app.routes';
     SearchComponent,
     NavbarComponent,
     NoimagePipe,
-    ArtistComponent,
-    SafeURLPipe
+    SafeURLPipe,
+    ArtistCardComponent,
+    LoadingSpinnerComponent
   ],
   imports: [
     BrowserModule,
