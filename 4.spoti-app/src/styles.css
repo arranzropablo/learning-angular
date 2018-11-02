@@ -37,6 +37,11 @@ hr{
   animation-fill-mode: both;
 }
 
+.img-thumb{
+  width: 75px;
+  height: 75px;
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;

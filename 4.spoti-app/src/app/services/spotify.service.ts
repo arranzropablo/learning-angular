@@ -9,7 +9,7 @@ import { map } from 'rxjs/operators';
 export class SpotifyService {
 
   baseUrl:string = "https://api.spotify.com/v1"
-  authToken:string = 'Bearer BQBSc57RbxC5e-lT8ZPGIq6mGkT6K6Tfxmo-Zx8erscx50fN-Ulje6AtuerzwIh-lyXR1UVrhWXxGwX1shM';
+  authToken:string = 'Bearer BQAfSmfwPH6jaJKLZNb6oUvZ7Cu-h17Os4RUWPuC221zGOhpNH7qetUN_Oo3LoWrhtVz_-kK8hksNZmYLrQ';
   headers:HttpHeaders = new HttpHeaders({
     'Authorization': this.authToken
   });
@@ -22,7 +22,15 @@ export class SpotifyService {
   }
 
   public getArtists(term:string){
-    return this.getQuery(`/search?q=${ term }&type=artist&limit=15`).pipe(map((data:any) => data.artists.items));
+    return this.getQuery(`/search?q=${term}&type=artist&limit=15`).pipe(map((data:any) => data.artists.items));
+  }
+
+  public getArtist(id:string){
+    return this.getQuery(`/artists/${id}`);
+  }
+
+  public getTopTracks(id:string){
+    return this.getQuery(`/artists/${id}/top-tracks?country=es`).pipe(map((data:any) => data.tracks));
   }
 
   public getQuery(query:string){

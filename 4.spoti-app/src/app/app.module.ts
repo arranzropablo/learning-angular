@@ -15,6 +15,7 @@ import { ArtistCardComponent } from './components/artist-card/artist-card.compon
 
 import { APP_ROUTES } from './app.routes';
 import { LoadingSpinnerComponent } from './components/shared/loading-spinner/loading-spinner.component';
+import { ArtistComponent } from './components/artist/artist.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { LoadingSpinnerComponent } from './components/shared/loading-spinner/loa
     NoimagePipe,
     SafeURLPipe,
     ArtistCardComponent,
-    LoadingSpinnerComponent
+    LoadingSpinnerComponent,
+    ArtistComponent
   ],
   imports: [
     BrowserModule,
