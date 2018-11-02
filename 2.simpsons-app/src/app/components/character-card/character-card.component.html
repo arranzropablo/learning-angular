@@ -1,0 +1,12 @@
+<div class="card">
+  <img class="card-img-top img-fluid" [src]="character.img" [alt]="character.name">
+  <div class="card-block">
+    <h4 class="card-title">{{ character.nombre }}</h4>
+    <p class="card-text">{{ character.bio }}</p>
+    <p class="card-text"><small class="text-muted">{{ character.appearing }}</small></p>
+    <button (click)="getCharacter(i)" type="button" class="btn btn-outline-success btn-block">
+      Ver más
+    </button>
+     <!--<a [routerLink]="['/character', i]" class="btn btn-outline-primary">Ver más...</a>-->
+  </div>
+</div>

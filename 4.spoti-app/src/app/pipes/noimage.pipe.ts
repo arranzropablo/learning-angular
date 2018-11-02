@@ -9,7 +9,7 @@ export class NoimagePipe implements PipeTransform {
     if (!value || value.length === 0){
       return "assets/img/noimage.png"
     }
-    return value[1].url;
+    return value[0].url;
   }
 
 }
