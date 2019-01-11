@@ -11,8 +11,6 @@ import { Component, OnInit } from '@angular/core';
       Hello world
     </p>
 
-    <button>
-
   `,
   styles: []
 })
