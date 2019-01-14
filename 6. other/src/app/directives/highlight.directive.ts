@@ -11,7 +11,6 @@ export class HighlightDirective {
 
   //ElementRef es el elemento sobre el que se pone la directiva
   constructor(private el:ElementRef) { 
-    console.log("called directive")
   }
 
   //Para reaccionar a eventos usamos host listener 
