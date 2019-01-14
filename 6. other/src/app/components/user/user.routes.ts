@@ -1,4 +1,4 @@
-import { RouterModule, Routes } from "@angular/router";
+import { Routes } from "@angular/router";
 import { UserDetailComponent } from "./user-detail.component";
 import { UserEditComponent } from "./user-edit.component";
 import { UserNewComponent } from "./user-new.component";
