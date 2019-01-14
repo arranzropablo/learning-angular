@@ -9,10 +9,10 @@ import { HighlightDirective } from './directives/highlight.directive';
 import { NgSwitchComponent } from './components/ng-switch/ng-switch.component';
 import { HomeComponent } from './components/home/home.component';
 import { APP_ROUTING } from './app.routes';
-import { UserComponent } from './components/usuario/user.component';
-import { UserNewComponent } from './components/usuario/user-new.component';
-import { UserEditComponent } from './components/usuario/user-edit.component';
-import { UserDetailComponent } from './components/usuario/user-detail.component';
+import { UserComponent } from './components/user/user.component';
+import { UserNewComponent } from './components/user/user-new.component';
+import { UserEditComponent } from './components/user/user-edit.component';
+import { UserDetailComponent } from './components/user/user-detail.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 
 @NgModule({
