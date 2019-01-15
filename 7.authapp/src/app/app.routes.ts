@@ -8,7 +8,7 @@ const routes: Routes = [
     { path: 'home', component: HomeComponent },
     { path: 'prices', component: PricesComponent },
     { path: 'private', component: PrivateComponent },
-    { path: '**', component: HomeComponent },
+    { path: '**', component: HomeComponent }
 ];
 
 export const APP_ROUTING = RouterModule.forRoot(routes)
